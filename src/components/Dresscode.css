@@ -1,0 +1,125 @@
+.dresscode-section {
+    padding: 100px 0;
+    background: var(--bg-section);
+}
+
+.dresscode-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.color-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-card);
+}
+
+.color-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-glow);
+}
+
+.color-swatch {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    border: 3px solid rgba(26, 29, 46, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.color-card h4 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.color-role {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.color-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.dresscode-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.note-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    align-items: flex-start;
+    box-shadow: var(--shadow-card);
+}
+
+.note-card .material-icons {
+    font-size: 32px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.note-card strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.note-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* === Animation enhancements === */
+.color-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.color-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(201, 169, 110, 0.12);
+    border-color: var(--primary);
+}
+
+.note-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .dresscode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dresscode-notes {
+        grid-template-columns: 1fr;
+    }
+}
