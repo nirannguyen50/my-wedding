@@ -35,9 +35,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            rgba(255, 255, 255, 0.3) 0%,
-            rgba(255, 255, 255, 0.15) 40%,
-            rgba(255, 255, 255, 0.6) 70%,
+            rgba(12, 23, 44, 0.55) 0%,
+            rgba(12, 23, 44, 0.45) 35%,
+            rgba(255, 255, 255, 0.4) 68%,
             rgba(247, 248, 252, 0.95) 100%);
 }
 
@@ -122,7 +122,8 @@
 .groom-name,
 .bride-name {
     display: block;
-    color: var(--text-primary);
+    color: #fff;
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
 .ampersand {
@@ -136,7 +137,8 @@
 
 .hero-subtitle {
     font-size: 16px;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
     max-width: 550px;
     margin: 0 auto 36px;
     line-height: 1.7;
