@@ -35,10 +35,10 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            rgba(12, 23, 44, 0.55) 0%,
-            rgba(12, 23, 44, 0.45) 35%,
-            rgba(255, 255, 255, 0.4) 68%,
-            rgba(247, 248, 252, 0.95) 100%);
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.2) 40%,
+            rgba(0, 0, 0, 0.4) 70%,
+            rgba(0, 0, 0, 0.6) 100%);
 }
 
 .hero-content {
@@ -90,25 +90,27 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(19, 146, 236, 0.1);
-    border: 1px solid rgba(19, 146, 236, 0.25);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 8px 24px;
     border-radius: 30px;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 3px;
-    color: var(--primary);
+    color: #ffffff;
     margin-bottom: 40px;
     backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .flight-banner .material-icons {
     font-size: 18px;
     animation: float 2s ease-in-out infinite;
+    color: #ffffff;
 }
 
 .dot {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .hero-title {
@@ -117,50 +119,52 @@
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 20px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .groom-name,
 .bride-name {
     display: block;
-    color: #fff;
-    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    color: #ffffff;
 }
 
 .ampersand {
     display: block;
     font-size: clamp(28px, 5vw, 42px);
-    color: var(--primary);
+    color: #ffffff;
     margin: 8px 0;
     font-style: italic;
     animation: heartBeat 2s ease-in-out infinite;
+    opacity: 0.9;
 }
 
 .hero-subtitle {
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.92);
-    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    color: rgba(255, 255, 255, 0.9);
     max-width: 550px;
     margin: 0 auto 36px;
     line-height: 1.7;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .flight-info-strip {
     display: inline-flex;
     align-items: center;
     gap: 24px;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid var(--border-subtle);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-lg);
     padding: 16px 32px;
     margin-bottom: 36px;
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flight-info-strip:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .flight-info-item {
@@ -171,7 +175,7 @@
 
 .flight-info-item .material-icons {
     font-size: 20px;
-    color: var(--primary);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .flight-info-item>div {
@@ -183,24 +187,24 @@
     font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .fi-value {
     display: block;
     font-size: 14px;
     font-weight: 600;
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .fi-value.on-time {
-    color: #16a34a;
+    color: #4ade80;
 }
 
 .flight-info-divider {
     width: 1px;
     height: 36px;
-    background: var(--border-subtle);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .countdown {
@@ -214,13 +218,14 @@
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 16px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .countdown-label .material-icons {
     font-size: 16px;
-    color: var(--primary);
+    color: #ffffff;
 }
 
 .countdown-grid {
@@ -230,33 +235,36 @@
 }
 
 .countdown-item {
-    background: rgba(19, 146, 236, 0.06);
-    border: 1px solid rgba(19, 146, 236, 0.15);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-md);
     padding: 16px 20px;
     min-width: 80px;
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .countdown-item:hover {
     transform: translateY(-4px);
-    border-color: var(--primary);
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .count-num {
     display: block;
     font-size: 32px;
     font-weight: 700;
-    color: var(--primary);
+    color: #ffffff;
     font-family: var(--font-body);
     line-height: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .count-label {
     display: block;
     font-size: 11px;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 4px;
@@ -285,26 +293,28 @@
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: #fff;
-    box-shadow: 0 4px 20px rgba(19, 146, 236, 0.3);
+    background: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(19, 146, 236, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    background: #f8fafc;
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
 }
 
 .btn-secondary:hover {
-    background: #fff;
-    color: var(--primary);
-    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: #ffffff;
 }
 
 .btn-primary .material-icons,
@@ -323,7 +333,8 @@
 
 .scroll-indicator .material-icons {
     font-size: 28px;
-    color: var(--text-muted);
+    color: #ffffff;
+    opacity: 0.8;
 }
 
 @media (max-width: 700px) {
@@ -336,6 +347,7 @@
     .flight-info-divider {
         width: 60%;
         height: 1px;
+        background: rgba(255, 255, 255, 0.2);
     }
 
     .countdown-grid {
