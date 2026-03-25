@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { toJpeg } from 'html-to-image'
 import useScrollReveal from '../hooks/useScrollReveal'
 import './Rsvp.css'
 
@@ -19,6 +20,7 @@ export default function Rsvp() {
     const [headerRef, headerVisible] = useScrollReveal()
     const [passRef, passVisible] = useScrollReveal({ threshold: 0.1 })
     const [formRef, formVisible] = useScrollReveal({ threshold: 0.1 })
+    const boardingPassRef = useRef(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -49,6 +51,25 @@ export default function Rsvp() {
         }
     }
 
+    const handleDownload = async () => {
+        if (boardingPassRef.current === null) return
+
+        try {
+            const dataUrl = await toJpeg(boardingPassRef.current, {
+                quality: 0.95,
+                backgroundColor: '#fff',
+                pixelRatio: 2 // Higher resolution
+            })
+            const link = document.createElement('a')
+            link.download = `boarding-pass-${formData.name || 'guest'}.jpg`
+            link.href = dataUrl
+            link.click()
+        } catch (err) {
+            console.error('Error downloading boarding pass:', err)
+            alert('Không thể tải ảnh. Vui lòng thử lại!')
+        }
+    }
+
     return (
         <section id="rsvp" className="rsvp-section">
             <div className="section-wrapper">
@@ -62,7 +83,10 @@ export default function Rsvp() {
                 </div>
 
                 <div className="rsvp-grid">
-                    <div ref={passRef} className={`rsvp-boarding-pass reveal-left ${passVisible ? 'visible' : ''}`}>
+                    <div ref={(el) => {
+                        passRef.current = el;
+                        boardingPassRef.current = el;
+                    }} className={`rsvp-boarding-pass reveal-left ${passVisible ? 'visible' : ''}`}>
                         <div className="rsvp-bp-header">
                             <span className="material-icons">flight</span>
                             <span>THẺ LÊN MÁY BAY</span>
@@ -98,7 +122,7 @@ export default function Rsvp() {
                                 </div>
                                 <div className="rsvp-bp-col">
                                     <span className="rsvp-bp-label">Giờ</span>
-                                    <span className="rsvp-bp-value large">16:00</span>
+                                    <span className="rsvp-bp-value large">18:00</span>
                                 </div>
                                 <div className="rsvp-bp-col">
                                     <span className="rsvp-bp-label">Số khách</span>
@@ -107,10 +131,12 @@ export default function Rsvp() {
                             </div>
                             <div className="rsvp-bp-row">
                                 <div className="rsvp-bp-col full">
-                                    <span className="rsvp-bp-label">Điểm đến</span>
-                                    <span className="rsvp-bp-value">
-                                        <span className="material-icons">place</span>
-                                        Chloe Gallery
+                                    <span className="rsvp-bp-value-stack">
+                                        <div className="venue-name">
+                                            <span className="material-icons">place</span>
+                                            Chloe Gallery
+                                        </div>
+                                        <div className="venue-address">02 - 06 Phan Văn Chương Hồ Bán Nguyệt - Phú Mỹ Hưng</div>
                                     </span>
                                 </div>
                             </div>
@@ -258,9 +284,19 @@ export default function Rsvp() {
                                 <p>Boarding pass của bạn đã được xác nhận cho chuyến bay TM0404.</p>
                                 <div className="success-details">
                                     <span><span className="material-icons">event</span> 04.04.2026</span>
-                                    <span><span className="material-icons">schedule</span> 16:00</span>
-                                    <span><span className="material-icons">place</span> Chloe Gallery</span>
+                                    <span><span className="material-icons">schedule</span> 18:00</span>
                                 </div>
+                                <div className="success-venue">
+                                    <div className="venue-name">
+                                        <span className="material-icons">place</span>
+                                        Chloe Gallery
+                                    </div>
+                                    <div className="venue-address">02 - 06 Phan Văn Chương Hồ Bán Nguyệt - Phú Mỹ Hưng</div>
+                                </div>
+                                <button onClick={handleDownload} className="btn-secondary download-btn">
+                                    <span className="material-icons">download</span>
+                                    Tải Thẻ Lên Máy Bay (JPG)
+                                </button>
                             </div>
                         )}
                     </div>

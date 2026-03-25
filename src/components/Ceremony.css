@@ -72,13 +72,26 @@
     margin-bottom: 4px;
 }
 
-.boarding-value {
+.boarding-value-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.venue-name {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.venue-address {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding-left: 24px;
 }
 
 .boarding-value.large {

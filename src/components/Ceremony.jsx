@@ -1,4 +1,5 @@
-import ceremonyImg from '@assets/MT-7.jpg'
+import { useMemo } from 'react'
+import ceremonyImg from '@assets/MT-7.webp'
 import useScrollReveal from '../hooks/useScrollReveal'
 import './Ceremony.css'
 
@@ -6,6 +7,9 @@ export default function Ceremony() {
     const [headerRef, headerVisible] = useScrollReveal()
     const [cardRef, cardVisible] = useScrollReveal({ threshold: 0.1 })
     const [sideRef, sideVisible] = useScrollReveal({ threshold: 0.1 })
+
+    // Move random heights to memo to avoid impure render lint error
+    const barHeights = useMemo(() => Array.from({ length: 40 }, () => 15 + Math.random() * 20), [])
 
     return (
         <section id="ceremony" className="ceremony-section">
@@ -55,15 +59,17 @@ export default function Ceremony() {
                                 </div>
                                 <div className="boarding-col">
                                     <span className="boarding-label">Giờ</span>
-                                    <span className="boarding-value large">16:00</span>
+                                    <span className="boarding-value large">18:00</span>
                                 </div>
                             </div>
                             <div className="boarding-row">
                                 <div className="boarding-col full">
-                                    <span className="boarding-label">Địa điểm</span>
-                                    <span className="boarding-value">
-                                        <span className="material-icons">place</span>
-                                        Chloe Gallery
+                                    <span className="boarding-value-stack">
+                                        <div className="venue-name">
+                                            <span className="material-icons">place</span>
+                                            Chloe Gallery
+                                        </div>
+                                        <div className="venue-address">02 - 06 Phan Văn Chương Hồ Bán Nguyệt - Phú Mỹ Hưng</div>
                                     </span>
                                 </div>
                             </div>
@@ -89,11 +95,11 @@ export default function Ceremony() {
                         </div>
                         <div className="boarding-footer">
                             <div className="barcode">
-                                {Array.from({ length: 40 }).map((_, i) => (
+                                {barHeights.map((height, i) => (
                                     <div
                                         className="bar"
                                         key={i}
-                                        style={{ height: `${15 + Math.random() * 20}px` }}
+                                        style={{ height: `${height}px` }}
                                     />
                                 ))}
                             </div>

@@ -17,87 +17,20 @@
     pointer-events: none;
 }
 
-/* Plane Animation */
-.sky-track {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    /* transform: translateY(-50%); */
+.intro-container.fade-out-late {
+    /* We don't want the whole container to disappear immediately because the 3D canvas needs to animate zooming in.
+       We can either let it naturally unmount when onCheckIn finishes, or give it a delay. */
+    pointer-events: none;
 }
 
-.plane-wrapper {
-    position: absolute;
-    left: -150px;
-    /* Start off-screen left */
-    display: flex;
-    align-items: center;
-    animation: flyAcross 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
-}
-
-.plane-icon {
-    font-size: 64px;
-    color: var(--primary);
-    transform: rotate(90deg);
-    /* Point right */
-    z-index: 2;
-    text-shadow: 0 4px 10px rgba(19, 146, 236, 0.3);
-}
-
-.contrail {
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    animation: contrailGrow 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
-}
-
-@keyframes flyAcross {
-    0% {
-        left: -150px;
-        transform: scale(0.8) translateY(0);
-    }
-
-    50% {
-        transform: scale(1.2) translateY(-20px);
-    }
-
-    100% {
-        left: 110%;
-        /* End off-screen right */
-        transform: scale(0.8) translateY(0);
-    }
-}
-
-@keyframes contrailGrow {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    100% {
-        width: 200px;
-        /* Length of contrail */
-        opacity: 0;
-    }
-}
-
-/* Intro Content (Button) */
+/* Intro Content (Button and Text) */
 .intro-content {
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    z-index: 10; /* Make sure text is above 3D model */
+    pointer-events: auto; /* Required to click button */
 }
 
 .intro-content.show {

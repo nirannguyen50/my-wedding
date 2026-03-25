@@ -8,6 +8,8 @@ import Gallery from './components/Gallery'
 import Rsvp from './components/Rsvp'
 import Footer from './components/Footer'
 import Intro from './components/Intro'
+import Parking from './components/Parking'
+import MusicPlayer from './components/MusicPlayer'
 
 function App() {
   const [showIntro, setShowIntro] = useState(true)
@@ -25,7 +27,9 @@ function App() {
           <Dresscode />
           <Gallery />
           <Rsvp />
+          <Parking />
           <Footer />
+          <MusicPlayer />
         </div>
       )}
     </>

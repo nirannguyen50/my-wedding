@@ -15,29 +15,36 @@ export default function Dresscode() {
                         TERMINAL 3
                     </div>
                     <h2>Trang Phục Khách Mời</h2>
-                    <p>Chúng tôi mong quý khách đến với trang phục lịch sự, trang trọng.</p>
+                    <p>Tone trang phục: <strong>Nhạt</strong>. Chúng tôi mong quý khách đến với trang phục lịch sự, trang trọng.</p>
                 </div>
 
                 <div ref={gridRef} className={`dresscode-grid stagger reveal ${gridVisible ? 'visible' : ''}`}>
                     <div className="color-card">
-                        <div className="color-swatch" style={{ background: 'linear-gradient(135deg, #c9a96e, #e8c990)' }} />
-                        <h4>Vàng Hồng</h4>
-                        <span className="color-role">Màu chủ đạo</span>
-                        <p>Gợi ý cho phụ kiện và chi tiết trang phục.</p>
+                        <div className="color-swatch" style={{ background: 'linear-gradient(135deg, #ffffff, #f0f0f0)', border: '1px solid #ddd' }} />
+                        <h4>Trắng</h4>
+                        <span className="color-role">Thanh khiết</span>
+                        <p>Lựa chọn tuyệt vời cho sự sang trọng dành cho các quý ông.</p>
                     </div>
 
                     <div className="color-card">
-                        <div className="color-swatch" style={{ background: 'linear-gradient(135deg, #f0ede8, #ffffff)' }} />
-                        <h4>Trắng Mây</h4>
-                        <span className="color-role">Tông nền</span>
-                        <p>Phù hợp cho áo sơ mi và lớp áo nhẹ.</p>
+                        <div className="color-swatch" style={{ background: 'linear-gradient(135deg, #000000, #333333)' }} />
+                        <h4>Đen</h4>
+                        <span className="color-role">Lịch lãm</span>
+                        <p>Tông màu kinh điển cho các buổi tiệc.</p>
                     </div>
 
                     <div className="color-card">
-                        <div className="color-swatch" style={{ background: 'linear-gradient(135deg, #1a1a2e, #2d2d44)' }} />
-                        <h4>Xanh Đêm</h4>
-                        <span className="color-role">Tông trang trọng</span>
-                        <p>Gợi ý cho vest và trang phục dạ tiệc.</p>
+                        <div className="color-swatch" style={{ background: 'linear-gradient(135deg, #00008b, #000055)' }} />
+                        <h4>Xanh Đậm</h4>
+                        <span className="color-role">Trang trọng</span>
+                        <p>Sâu lắng và đầy cá tính.</p>
+                    </div>
+
+                    <div className="color-card">
+                        <div className="color-swatch" style={{ background: 'linear-gradient(135deg, #fff5f5, #fff0f5)' }} />
+                        <h4>Pastel</h4>
+                        <span className="color-role">Nhẹ nhàng</span>
+                        <p>Nhẹ nhàng và đầy tinh tế.</p>
                     </div>
                 </div>
 
@@ -46,14 +53,14 @@ export default function Dresscode() {
                         <span className="material-icons">man</span>
                         <div>
                             <strong>Quý ông</strong>
-                            <p>Khuyến khích mặc vest tối màu, phối phụ kiện tone Rose Gold.</p>
+                            <p>Khuyến khích mặc vest tối màu.</p>
                         </div>
                     </div>
                     <div className="note-card ladies">
                         <span className="material-icons">woman</span>
                         <div>
                             <strong>Quý bà</strong>
-                            <p>Xin vui lòng tránh váy trắng tinh để tôn vinh cô dâu. Tone pastel hoặc rose gold được khuyến khích.</p>
+                            <p>Xin vui lòng tránh váy trắng tinh để tôn vinh cô dâu.</p>
                         </div>
                     </div>
                 </div>

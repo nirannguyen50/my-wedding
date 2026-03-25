@@ -25,7 +25,7 @@ export default function Navbar() {
             <div className="navbar-inner">
                 <a href="#hero" className="navbar-logo">
                     <span className="material-icons logo-icon">flight</span>
-                    <span className="logo-text">The Journey Air</span>
+                    <span className="logo-text">THE LOVE JOURNEY</span>
                     <span className="flight-code">CT&TM</span>
                 </a>
 

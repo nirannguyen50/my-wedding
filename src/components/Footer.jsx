@@ -10,9 +10,9 @@ export default function Footer() {
                 <div className="footer-top">
                     <div className="footer-logo">
                         <span className="material-icons">flight</span>
-                        <span>The Journey Air</span>
+                        <span>THE LOVE JOURNEY</span>
                     </div>
-                    <p className="footer-tagline">Chuyến bay TM0404 • Vận hành bởi The Journey Air</p>
+                    <p className="footer-tagline">Chuyến bay TM0404 • Vận hành bởi THE LOVE JOURNEY</p>
                 </div>
 
                 <div className="footer-links">

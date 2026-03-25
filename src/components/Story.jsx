@@ -1,6 +1,6 @@
-import storyImg1 from '@assets/MT-10.jpg'
-import storyImg2 from '@assets/MT-25.jpg'
-import storyImg3 from '@assets/MT-50.jpg'
+import storyImg1 from '@assets/MT-10.webp'
+import storyImg2 from '@assets/MT-25.webp'
+import storyImg3 from '@assets/MT-50.webp'
 import useScrollReveal from '../hooks/useScrollReveal'
 import './Story.css'
 

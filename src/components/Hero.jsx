@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import heroImg from '@assets/MT-3.jpg'
+import heroImg from '@assets/MT-3.webp'
 import './Hero.css'
 
 export default function Hero() {
@@ -8,7 +8,7 @@ export default function Hero() {
 
     useEffect(() => {
         setLoaded(true)
-        const weddingDate = new Date('2026-04-04T16:00:00+07:00')
+        const weddingDate = new Date('2026-04-04T18:00:00+07:00')
         const timer = setInterval(() => {
             const now = new Date()
             const diff = weddingDate - now
@@ -38,7 +38,7 @@ export default function Hero() {
                     <span className="material-icons">flight</span>
                     <span>CHUYẾN BAY TM0404</span>
                     <span className="dot">•</span>
-                    <span>THE JOURNEY AIR</span>
+                    <span>THE LOVE JOURNEY</span>
                 </div>
 
                 <h1 className="hero-title hero-anim hero-anim-2">
