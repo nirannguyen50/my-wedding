@@ -65,13 +65,13 @@ function Airplane({ isCheckingIn }) {
                 x: -7, // move plane left so right side (door) aligns with camera
                 y: -0.5, // slightly below center
                 z: 14, // very close to camera
-                duration: 3.0,
+                duration: 4.0,
                 ease: 'power3.in'
             })
             gsap.to(groupRef.current.rotation, {
                 y: -0.1, // turns nearly flat to the camera to expose the door
                 z: Math.PI / 8, // dramatic bank
-                duration: 3.0,
+                duration: 4.0,
                 ease: 'power3.in'
             })
         }

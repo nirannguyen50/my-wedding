@@ -23,6 +23,21 @@
     pointer-events: none;
 }
 
+/* Cinematic fade-to-black overlay */
+.fade-to-black-overlay {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 1.5s ease-in;
+}
+
+.fade-to-black-overlay.active {
+    opacity: 1;
+}
+
 /* Intro Content (Button and Text) */
 .intro-content {
     text-align: center;
